@@ -5,19 +5,20 @@
     <div class="form-group">
       <label for="name">NAME</label>
       <br>
-      <input type="text" required class="form-control" id="name">
+      <input type="text" required class="form-control" id="name" [(ngModel)]="newQuotes.name" name="name" #name="ngModel" required>
+
     </div>
 
     <div class="form-group">
       <label for="quote">QUOTE</label>
       <br>
-      <textarea class="form-control" rows="3"></textarea>
+      <textarea class="form-control" rows="3" [(ngModel)]="newQuotes.quote" name="quote" #quote="ngModel" required></textarea>
     </div>
 
     <div class="form-group">
       <label for="date">DATE</label>
       <br>
-      <input type="date" required class="form-control" id="date">
+      <input type="date" required class="form-control" id="date" [(ngModel)]="newQuotes.date" name="date" #date="ngModel" required>
     </div>
 
     <button type="submit" class="btn btn-success">SUBMIT QUOTE</button>
