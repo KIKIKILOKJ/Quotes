@@ -1,11 +1,11 @@
 <div class="container">
   <h1>QUOTES</h1>
   <hr>
-  <form #quotesForm='ngForm'>
+  <form (ngSubmit)='submitQuote()' #quotesForm='ngForm'>
     <div class="form-group">
       <label for="name">NAME</label>
       <br>
-      <input type="text" required class="form-control" id="name" [(ngModel)]="newQuote.name" name="name" #name="ngModel" required>
+      <input type="text" required class="form-control" id="name" [(ngModel)]="quotes.name" name="name" #name="ngModel" required>
 
       <div [hidden]="name.valid || name.pristine" class="alert alert-danger">
         <p>Name is Required!!</p>
@@ -16,7 +16,7 @@
     <div class="form-group">
       <label for="quote">QUOTE</label>
       <br>
-      <textarea class="form-control" rows="3" [(ngModel)]="newQuote.quote" name="quote" #quote="ngModel" required></textarea>
+      <textarea class="form-control" rows="3" [(ngModel)]="quote.quote" name="quote" #quote="ngModel" required></textarea>
 
       <div [hidden]="quote.valid || quote.pristine" class="alert alert-danger">
         <p>Quote is Required!!</p>
@@ -27,7 +27,7 @@
     <div class="form-group">
       <label for="date">DATE</label>
       <br>
-      <input type="date" required class="form-control" id="date" [(ngModel)]="newQuote.date" name="date" #date="ngModel" required>
+      <input type="date" required class="form-control" id="date" [(ngModel)]="quote.date" name="date" #date="ngModel" required>
 
       <div [hidden]="date.valid || date.pristine" class="alert alert-danger">
         <p>Date is Required!!</p>
