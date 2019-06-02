@@ -1,6 +1,7 @@
 <div class="container">
   <h1>QUOTES</h1>
   <hr>
+  <app-quotes-form (addQuotes)="addNewQuotes($event)"></app-quotes-form>
   <form (ngSubmit)='submitQuote()' #quotesForm='ngForm'>
     <div class="form-group">
       <label for="name">NAME</label>
