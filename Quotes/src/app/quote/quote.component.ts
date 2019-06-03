@@ -9,8 +9,7 @@ import {Quote} from '../quote'
 export class QuoteComponent implements OnInit {
 
   quotes = [
-    new Quote(1,'Early to bed', 'Early to rise', new Date(2018,3,4) ),
-    new Quote(2,'Hurry Hurry', 'Has no Blessings', new Date(2018,3,4) ),
+    new Quote(0,'', '', new Date() ),
   ]
 
   deleteQuote(isComplete,index){
