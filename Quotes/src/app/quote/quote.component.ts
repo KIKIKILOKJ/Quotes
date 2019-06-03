@@ -9,15 +9,19 @@ import {Quote} from '../quote'
 export class QuoteComponent implements OnInit {
 
   quotes = [
-    new Quote(1,'Early to bed', 'Early to rise', new Date(2018,3,4)),
-    new Quote(2,'Hurry Hurry', 'Has no Blessings', new Date(2018,3,4)),
+    new Quote(1,'Early to bed', 'Early to rise', new Date(2018,3,4) ),
+    new Quote(2,'Hurry Hurry', 'Has no Blessings', new Date(2018,3,4) ),
   ]
 
-  completeQuote(isComplete,index){
+  deleteQuote(isComplete,index){
     if(isComplete){
-      this.quotes.splice(index,1);
+      let toDelete = confirm(`Are you sure you want to delete ${this.quotes[index].name}`)
+
+      if (toDelete){
+        this.quotes.splice(index,1)
+      }
     }
-    }
+  }
 
   toggleDetails(index){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;

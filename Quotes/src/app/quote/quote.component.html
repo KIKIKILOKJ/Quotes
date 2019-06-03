@@ -5,6 +5,6 @@
     <li >{{quote.name}} submitted on {{quote.submitDate|date}}</li>
     <button  (click)='toggleDetails(i)'>Toggle Details</button>
 
-    <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)= 'completeQuote($event,i)'></app-quote-details>
+    <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)= 'deleteQuote($event,i)'></app-quote-details>
   </div>
 </ul>

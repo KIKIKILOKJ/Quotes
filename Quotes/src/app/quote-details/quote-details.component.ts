@@ -11,7 +11,7 @@ export class QuoteDetailsComponent implements OnInit {
   @Input() quote:Quote;
   @Output() isCompete = new EventEmitter<boolean>();
 
-  quoteComplete(complete:boolean){
+  quoteDelete(complete:boolean){
     this.isCompete.emit(complete);
   }
   constructor() { }
