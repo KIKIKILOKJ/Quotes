@@ -2,6 +2,10 @@
 <hr>
 <ul>
 <div class="container">
+  <div class="row">
+    <app-quote-form></app-quote-form>
+
+  </div>
   <div class="row" *ngFor='let quote of quotes;let i = index'>
     <li >{{quote.name}} submitted on {{quote.submitDate|date}}</li>
     <button  (click)='toggleDetails(i)'>Toggle Details</button>
