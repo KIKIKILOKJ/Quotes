@@ -13,6 +13,12 @@ export class QuoteComponent implements OnInit {
     new Quote(2,'Hurry Hurry', 'Has no Blessings'),
   ]
 
+  completeQuote(isComplete,index){
+    if(isComplete){
+      this.quotes.splice(index,1);
+    }
+    }
+
   toggleDetails(index){
     this.quotes[index].showDescription = !this.quotes[index].showDescription;
   }
