@@ -7,10 +7,11 @@
 
   </div>
   <div class="row" *ngFor='let quote of quotes;let i = index'>
-    <li >{{quote.name}} submitted on {{quote.submitDate|date}}</li>
+    <li id="{{i}}" appHighlightthrough >{{quote.name}} submitted on {{quote.submitDate|date}}</li>
     <button  (click)='toggleDetails(i)'>Toggle Details</button>
 
-    <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)= 'deleteQuote($event,i)'></app-quote-details>
+    <app-quote-details *ngIf="quote.showDescription" [quote]='quote' (isComplete)=getHighestQuote($event) (isComplete)= 'deleteQuote($event,i)'></app-quote-details>
   </div>
+
 </div>
 </ul>

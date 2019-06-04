@@ -8,13 +8,28 @@ import {Quote} from '../quote'
 })
 export class QuoteDetailsComponent implements OnInit {
 
+  vote:number
   @Input() quote:Quote;
+  votes = 0;
   @Output() isCompete = new EventEmitter<boolean>();
+
 
   quoteDelete(complete:boolean){
     this.isCompete.emit(complete);
   }
-  constructor() { }
+  constructor() {
+    this.vote = 0;
+  }
+
+  likeVote():boolean{
+    this.vote +=1;
+    return false;
+  }
+
+  dislikeVote():boolean{
+    this.vote -=1;
+    return false
+  }
 
   ngOnInit() {
   }
